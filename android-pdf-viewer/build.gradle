@@ -14,5 +14,5 @@ android {
 
 dependencies {
     implementation 'androidx.core:core:1.16.0'
-    api 'com.github.TalbotGooday:PdfiumAndroid:1.0.1'
+    api 'com.github.aldagram:PdfiumAndroid:2.0.0'
 }
