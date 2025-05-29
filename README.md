@@ -1,21 +1,25 @@
 
 # WARNING!
-This fork was made in order to migrate the library to AndroidX. Add-ons and updates probably will not appear.
+This fork was made in order to support for 16KB page size. Add-ons and updates probably will not appear.
 
-[![Release](https://jitpack.io/v/TalbotGooday/AndroidPdfViewer.svg)](https://jitpack.io/#TalbotGooday/AndroidPdfViewer)
+[![](https://jitpack.io/v/aldagram/AndroidPdfViewer.svg)](https://jitpack.io/#aldagram/AndroidPdfViewer)
 
-Add to _build.gradle_:
-```groovy
-allprojects {
-	repositories {
-		...
-		maven { url 'https://jitpack.io' }
-	}
+Add it in your root settings.gradle.kts at the end of repositories:
+```kotlin
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+    }
 }
 ```
+
 Add the dependency
-```groovy
-implementation 'com.github.TalbotGooday:AndroidPdfViewer:Tag'
+```kotlin
+dependencies {
+    implementation("com.github.aldagram:AndroidPdfViewer:Tag")
+}
 ```
 
 ---
