@@ -1,4 +1,7 @@
-apply plugin: 'com.android.library'
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
 
 android {
     namespace 'com.github.barteksc.pdfviewer'
@@ -8,11 +11,29 @@ android {
         minSdkVersion 21
         targetSdkVersion 35
         versionCode 1
-        versionName "3.2.0-beta.1"
+        versionName '4.0.0-beta.1'
+    }
+
+    publishing {
+        singleVariant("release")
     }
 }
 
 dependencies {
     implementation 'androidx.core:core:1.16.0'
     api 'com.github.aldagram:PdfiumAndroid:2.0.0'
+}
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.github.aldagram'
+            artifactId = 'AndroidPdfViewer'
+            version = '4.0.0-beta.1'
+
+            afterEvaluate {
+                from components.release
+            }
+        }
+    }
 }
